@@ -150,7 +150,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         // Step 4: Redirect to home page with alert
         echo "<script>
                 alert('Your order has been successfully placed!');
-                window.location.href = 'home.php';
+                window.location.href = 'index.php';
               </script>";
         exit();
     }
@@ -223,7 +223,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <!-- Mobile Header -->
         <header class="mobile-nav p-3">
             <div class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></div>
-            <a href="home.php" class="navbar-brand">
+            <a href="index.php" class="navbar-brand">
                 <img src="images/logo-black.svg" alt="Logo" class="logo" width="150px">
             </a>
             <a href="mycart.php"><i class="bi bi-cart3"></i></a>
@@ -243,7 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <li class="nav-item"><a href="news.php" class="nav-link">News</a></li>
                         <li class="nav-item"><a href="collection.php" class="nav-link">Shop</a></li>
                     </ul>
-                    <a href="home.php" class="navbar-brand mx-4">
+                    <a href="index.php" class="navbar-brand mx-4">
                         <img src="images/logo-black.svg" alt="Logo" class="logo" width="225px">
                     </a>
                     <ul class="nav">

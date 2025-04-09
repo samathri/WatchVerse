@@ -70,7 +70,7 @@ $result_offers = $conn->query($sql_offers);
   <!-- Mobile Header -->
   <header class="mobile-nav p-3">
     <div class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></div>
-    <a href="home.php" class="navbar-brand">
+    <a href="index.php" class="navbar-brand">
       <img src="images/logo-black.svg" alt="Logo" class="logo" width="150px">
     </a>
     <a href="mycart.html"><i class="bi bi-cart3"></i></a>

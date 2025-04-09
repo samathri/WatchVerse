@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['email'] = $user['userEmail'];
                 $_SESSION['first_name'] = $user['userFname'];
 
-                header("Location: Home.php");
+                header("Location: index.php");
                 exit();
             } else {
                 $error_message = "Invalid email or password";
