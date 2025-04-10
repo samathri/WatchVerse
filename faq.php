@@ -272,7 +272,7 @@ include 'php/db.php';
       <!-- Footer Bottom -->
       <hr>
       <div class="footer-bottom d-flex justify-content-center align-items-center text-center">
-        <p class="footer-contact-us" style="padding-right: 100px;">All Copyrights Reserved © ALANKARAGE HOLDINGS
+        <p class="footer-contact-us" style="padding-right: 100px;">All Copyrights Reserved ©HourMarkers
         </p>
         <p>
           <a href="#" style="font-weight: 100;">Privacy Policy</a>
