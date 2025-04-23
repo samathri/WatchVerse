@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist Toggle</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .wishlist-btn {
+            font-size: 24px;
+            cursor: pointer;
+            color: gray;
+            transition: color 0.3s ease;
+        }
+        .wishlist-btn.active {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="product-card text-center p-3 position-relative">
+    <div class="wishlist-icon">
+        <i class="bi bi-heart wishlist-btn" id="wishlistIcon"></i>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const wishlistBtn = document.getElementById("wishlistIcon");
+
+        wishlistBtn.addEventListener("click", function () {
+            this.classList.toggle("active");
+
+            // Toggle the heart icon between filled and outlined
+            if (this.classList.contains("active")) {
+                this.classList.replace("bi-heart", "bi-heart-fill");
+            } else {
+                this.classList.replace("bi-heart-fill", "bi-heart");
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
