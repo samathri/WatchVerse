@@ -1,477 +1,810 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/collection_style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-     <link href="script.js" rel="stylesheet">
-     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style/styles.css">
+  <link rel="stylesheet" href="style/collection_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="script.js" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
 </head>
+
 <body>
-    
-    <!-- Mobile Header -->
-    <header class="mobile-nav p-3">
-        <div class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></div>
-        <a href="#" class="navbar-brand">
-            <img src="images/logo-black.svg" alt="Logo" class="logo" width="150px" >
+
+  <!-- Mobile Header -->
+  <header class="mobile-nav p-3">
+    <div class="menu-toggle" id="menuToggle"><i class="bi bi-list"></i></div>
+    <a href="home.html" class="navbar-brand">
+      <img src="images/logo-black.svg" alt="Logo" class="logo" width="150px">
+    </a>
+    <a href="mycart.html"><i class="bi bi-cart3"></i></a>
+  </header>
+  <!-- Desktop Header -->
+  <header class="desktop-nav py-3">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-5">
+        <a href="wishlist.html"><i class="bi bi-heart"></i></a>
+        <a href="javascript:void(0);" onclick="openSearch('desktopSearch')"><i class="bi bi-search nav-link "></i></a>
+
+      </div>
+      <nav class="d-flex align-items-center">
+        <ul class="nav">
+          <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
+          <li class="nav-item"><a href="collection.html" class="nav-link">Shop</a></li>
+        </ul>
+        <a href="home.html" class="navbar-brand mx-4">
+          <img src="images/logo-black.svg" alt="Logo" class="logo" width="225px">
         </a>
-        <a href="mycart.html"><i class="fas fa-shopping-cart"></i></a>
-    </header>
+        <ul class="nav">
+          <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+      </nav>
+      <div class="d-flex gap-5">
+        <a href="#"><i class="bi bi-person"></i></a>
+        <a href="#"><i class="bi bi-cart3"></i></a>
+      </div>
+    </div>
+  </header>
+  <!-- Search Bar for Desktop -->
+  <div class="search-popup" id="desktopSearch" style="border: 1px solid black;">
+    <div class="search-box">
+      <input type="text" placeholder="&nbsp; &nbsp; &nbsp; Search..." class="search-input">
+      <button class="search-close" onclick="closeSearch('desktopSearch')"><i class="bi bi-x"></i></button>
+    </div>
+  </div>
 
-    <!-- Desktop Header -->
-    <header class="desktop-nav py-3">
-        <div class="container d-flex justify-content-between align-items-center">
-            <div class="d-flex gap-5">
-                <a href="#"><i class="far fa-heart"></i></a>
-                <a href="#"><i class="fas fa-search"></i></a>
-            </div>
-            <nav class="d-flex align-items-center">
-                <ul class="nav">
-                    <li class="nav-item"><a href="news.html" class="nav-link">News</a></li>
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Shop</a></li>
-                </ul>
-                <a href="#" class="navbar-brand mx-4">
-                    <img src="images/logo-black.svg" alt="Logo" class="logo" width="225px">
-                </a>
-                <ul class="nav">
-                    <li class="nav-item"><a href="faq.html" class="nav-link">FAQ</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                </ul>
-            </nav>
-            <div class="d-flex gap-5">
-                <a href="profile.html"><i class="fas fa-user"></i></a>
-                <a href="mycart.html"><i class="fas fa-shopping-cart"></i></a>
-            </div>
-        </div>
-    </header>
+  <!-- Search Bar for Mobile -->
+  <div class="search-popup mobile-search" id="mobileSearch">
+    <div class="search-box">
+      <input type="text" placeholder="Search..." class="search-input">
+      <button class="search-close" onclick="closeSearch('mobileSearch')"><i class="bi bi-x"></i></button>
+    </div>
+  </div>
 
-    <!-- Mobile Sidebar Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="close-menu" id="closeMenu"><i class="fas fa-times"></i></div>
-        <a href="news.html">News</a>
-        <a href="index.html">Shop</a>
-        <a href="faq.html">FAQ</a>
-        <a href="about.html">About</a>
-
-        <!-- Icons Section -->
-        <div class="menu-icons">
-            <a href="profile.html"><i class="fas fa-user"></i> Profile</a>
-            <a href="#"><i class="fas fa-search"></i> Search</a>
-            <a href="wishlist.html"><i class="far fa-heart"></i> Wishlist</a>
-        </div>
+  <!-- Mobile Sidebar Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="menu-header">
+      <button class="menu-icon search-btn" id="mobileSearchIcon"><i class="bi bi-search"></i></button>
+      <!-- Hidden Search Bar (Initially Hidden) -->
+      <div class="search-bar" id="mobileSearchBar">
+        <input type="text" class="search-input" placeholder="Search...">
+      </div>
+      <button class="menu-icon close-btn" id="closeMenu"><i class="bi bi-x"></i></button>
     </div>
 
-<!-- Hero Section -->
-<header class="hero-section-h text-center text-white">
+
+
+    <nav class="menu-links">
+      <a href="news.html">News</a>
+      <a href="collection.html">Shop</a>
+      <a href="faq.html">FAQ</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <!-- Icons Section -->
+    <div class="menu-icons">
+      <a href="profile.html"><i class="bi bi-person"></i> Profile</a>
+      <a href="wishlist.html"><i class="bi bi-heart"></i> Wishlist</a>
+    </div>
+  </div>
+
+
+  <!-- Hero Section -->
+  <header class="hero-section-h text-center text-white">
     <h1 class="hero-title-home">Elevate Every Moment – Find </h1>
     <h1 class="hero-title-home">Your Watch</h1>
     <div class="secondhero">
-<h6 style=" letter-spacing: 1px;">Explore watches that match your style and elevate every moment. Find your perfect timepiece today </h6>
+      <h6 style=" letter-spacing: 1px;">Explore watches that match your style and elevate every moment. Find your
+        perfect timepiece today </h6>
     </div>
-    <button class="btn btn-primary-hero mt-3">Explore Collection</button>
-</header>
-  <!-- Popular Brands -->
- <section class="brands">
-  <h2>Popular Brands</h2>
-  <div class="news-divider-h"></div>
-  <div class="brand-logos">
-      <img src="images/ROLEX.png" alt="Rolex">
-      <img src="images/PILI.png" alt="Patek Philippe">
-      <img src="images/casio.png" alt="Casio">
-      <img src="images/tag.png" alt="Tag Heuer">
-      <img src="images/tissot.png" alt="Tissot">
-  </div>
-</section>
+    <button class="btn btn-primary-hero mt-3" id="hero-home">Find Watch</button>
+    <button class="btn btn-primary-hero mt-3">buy Now</button>
+  </header>
 
-  
+
   <section class="container my-5">
     <h2 class="text-center">Trending Watches</h2>
     <div class="news-divider-h"></div>
     <div class="row mt-4">
       <div class="container text-center mt-4">
         <div class="category-tabs">
-            <span class="tab active" onclick="changeTab(this)">Best Sellers</span>
-            <span class="tab" onclick="changeTab(this)">Trending</span>
-            <span class="tab" onclick="changeTab(this)">Latest Arrivals</span>
-            <span class="tab" onclick="changeTab(this)">Offers</span>
+          <span class="tab active" onclick="changeTab(this, 'best-sellers')">Best Sellers</span>
+          <span class="tab" onclick="changeTab(this, 'trending')">Trending</span>
+          <span class="tab" onclick="changeTab(this, 'latest-arrivals')">Latest Arrivals</span>
+          <span class="tab" onclick="changeTab(this, 'offers')">Offers</span>
         </div>
+      </div>
     </div>
 
     <br><br>
-     
+
     <div class="row mt-5">
-      <!-- Product Card 1 -->
-      <div class="col-md-3 col-sm-6 mb-4">
-          <div class="product-card text-center p-3 position-relative">
+
+      <!-- Best Sellers -->
+      <div class="product-list" id="best-sellers">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+          <!-- Product Card 1 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
               <div class="sale-badge"><button id="sale">SALE</button></div>
               <div class="wishlist-icon">
-                  <i class="bi bi-heart wishlist-btn"></i>
+                <i class="bi bi-heart wishlist-btn"></i>
               </div>
               <img src="./images/rb_27322 1.png" class="img-fluid" alt="Watch">
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
               <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
               <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
-          </div>
-          <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
-          <div class="rating">
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
           </div>
-          <button class="add-to-cart mt-2">Add To Cart</button>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-          <div class="product-card text-center p-3 position-relative">
+
+
+          <!-- Product Card 2 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
               <div class="sale-badge"><button id="sale">SALE</button></div>
               <div class="wishlist-icon">
-                  <i class="bi bi-heart wishlist-btn"></i>
+                <i class="bi bi-heart wishlist-btn"></i>
               </div>
               <img src="./images/cart2.png" class="img-fluid" alt="Watch">
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
               <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
               <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
-          </div>
-          <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
-          <div class="rating">
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
           </div>
-          <button class="add-to-cart mt-2">Add To Cart</button>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-          <div class="product-card text-center p-3 position-relative">
+
+          <!-- Product Card 3 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
               <div class="sale-badge"><button id="sale">SALE</button></div>
               <div class="wishlist-icon">
-                  <i class="bi bi-heart wishlist-btn"></i>
+                <i class="bi bi-heart wishlist-btn"></i>
               </div>
               <img src="./images/cart3.png" class="img-fluid" alt="Watch">
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
               <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
               <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
-          </div>
-          <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
-          <div class="rating">
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
           </div>
-          <button class="add-to-cart mt-2">Add To Cart</button>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-          <div class="product-card text-center p-3 position-relative">
+
+
+          <!-- Product Card 4 -->
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
               <div class="sale-badge"><button id="sale">SALE</button></div>
               <div class="wishlist-icon">
-                  <i class="bi bi-heart wishlist-btn"></i>
+                <i class="bi bi-heart wishlist-btn"></i>
               </div>
               <img src="./images/cart4.png" class="img-fluid" alt="Watch">
-          </div>
-          <div class="d-flex justify-content-between align-items-center">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
               <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
               <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
-          </div>
-          <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
-          <div class="rating">
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <i class="bi bi-star-fill"></i>
               <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
           </div>
-          <button class="add-to-cart mt-2">Add To Cart</button>
+        </div>
       </div>
-  
+
+
+      <!-- Trending -->
+      <div class="product-list d-none" id="trending">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+          <!-- Product Card 1 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart2.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart3.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart4.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Latest Arrivals -->
+      <div class="product-list d-none" id="latest-arrivals">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+          <!-- Product Card 1 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/rb_27322 1.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+
+
+          <!-- Product Card 2 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart2.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Offers -->
+      <div class="product-list d-none" id="offers">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+
+
+          <!-- Product Card 1 -->
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart3.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+
+
+          <!-- Product Card 2 -->
+
+          <div class="col-md-3 col-sm-6 mb-4">
+            <div class="product-card text-center p-3 position-relative">
+              <div class="sale-badge"><button id="sale">SALE</button></div>
+              <div class="wishlist-icon">
+                <i class="bi bi-heart wishlist-btn"></i>
+              </div>
+              <img src="./images/cart4.png" class="img-fluid" alt="Watch">
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+              <h6 class="productname">CONSTELLATION GLOBEMASTER</h6>
+              <h6 class="mt-2 price">250$ <span class="old-price">270$</span></h6>
+            </div>
+            <h6 class="description">41 mm, steel - Sedna™ gold on leather strap</h6>
+            <div class="rating">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <span class="ratingnumber">(212)</span>
+            </div>
+            <button class="add-to-cart mt-2">Add To Cart</button>
+          </div>
+        </div>
+      </div>
+
+
+
       <!-- Repeat for other product cards -->
-  </div>
-    
+    </div>
+
   </section>
+
+
+  <div class="wrapper-n">
+    <section class="subscribe-container-n">
+      <div class="subscribe-content-n">
+        <h2 class="subscribe-title-n">Be the First to Know</h2>
+        <p class="subscribe-text-n">
+          Discover how to find the best watch and exclusive products and offers via email
+        </p>
+        <div class="input-container-n">
+          <input type="email" class="subscribe-input-n" placeholder="your email">
+          <button class="subscribe-button-n"><i class="bi bi-send-fill"></i></button>
+        </div>
+      </div>
+    </section>
+  </div>
+
   
 
-  <!-- Customization Section -->
-  <section class="customization-section-h text-white text-center">
-    <h2>Be the First to Know</h2>
-    <p>Customize and personalize your watch experience.</p>
-  </section>
+
   <!-- Watch Selector Section -->
-  <section class="watch-selector-section text-center mt-5">
-    <h2>Let's Find You A Watch</h2>
-    <div class="filter-controls d-flex justify-content-center mt-3 mb-4">
-      <button class="filter-btn">Color</button>
-      <button class="filter-btn">Material</button>
-      <button class="filter-btn">Type</button>
-      <button class="filter-btn">Brand</button>
+  <section class="watch-selector-section-s">
+    <h2 class="watch-title-s">Let's Find You A Watch</h2>
+    <div class="filter-controls-s mt-3">
+
+      <!-- Color Dropdown -->
+      <div class="dropdown-s">
+        <button class="btn-s dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Color
+        </button>
+        <ul class="dropdown-menu dropdown-menu-s">
+          <li><a class="dropdown-item dropdown-item-s" href="#">Black</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Silver</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Gold</a></li>
+        </ul>
+      </div>
+
+      <span class="divider-s"></span>
+
+      <!-- Material Dropdown -->
+      <div class="dropdown-s">
+        <button class="btn-s dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Material
+        </button>
+        <ul class="dropdown-menu dropdown-menu-s">
+          <li><a class="dropdown-item dropdown-item-s" href="#">Stainless Steel</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Leather</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Titanium</a></li>
+        </ul>
+      </div>
+
+      <span class="divider-s"></span>
+
+      <!-- Type Dropdown -->
+      <div class="dropdown-s">
+        <button class="btn-s dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Type
+        </button>
+        <ul class="dropdown-menu dropdown-menu-s">
+          <li><a class="dropdown-item dropdown-item-s" href="#">Analog</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Digital</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Smart</a></li>
+        </ul>
+      </div>
+
+      <span class="divider-s"></span>
+
+      <!-- Brand Dropdown -->
+      <div class="dropdown-s">
+        <button class="btn-s dropdown-toggle" type="button" data-bs-toggle="dropdown">
+          Brand
+        </button>
+        <ul class="dropdown-menu dropdown-menu-s">
+          <li><a class="dropdown-item dropdown-item-s" href="#">Rolex</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Tag Heuer</a></li>
+          <li><a class="dropdown-item dropdown-item-s" href="#">Omega</a></li>
+        </ul>
+      </div>
     </div>
+
+    <hr class="custom-hr-n">
+
+
+    <!-- Carousel Section -->
     <iframe src="slider.html" width="100%" height="500px" frameborder="0"></iframe>
 
+
   </section>
-  
+
+  <hr class="custom-hr-n">
+
   <h1 class="news-heading-h">Latest News</h1>
-    <div class="news-divider-h"></div>  
+  <div class="news-divider-h"></div>
 
-    <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-        <br><br>
-        
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <div class="d-flex justify-content-center gap-3">
-                    <div class="news-card">
-                        <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
-                        <div class="news-img-container">
-                            <img src="images/img1 N.png" class="news-img" alt="News Image 1">
-                        </div>
-                        <div class="news-card-body">
-                            <h3 class="news-title-h">How to pick the perfect watch</h3>
-                            <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material, and functionality.</h4>
-                            <a href="#" class="news-link">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
-                        <div class="news-img-container">
-                            <img src="images/img2 N.png" class="news-img" alt="News Image 2">
-                        </div>
-                        <div class="news-card-body">
-                            <h3 class="news-title-h">How to pick the perfect watch</h3>
-                            <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material, and functionality.</h4>
-                            <a href="#" class="news-link">Read More</a>
-                        </div>
-                    </div>
-
-                    <div class="news-card">
-                        <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
-                        <div class="news-img-container">
-                            <img src="images/img3 N.png" class="news-img" alt="News Image 3">
-                        </div>
-                        <div class="news-card-body">
-                            <h3 class="news-title-h">How to pick the perfect watch</h3>
-                            <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material, and functionality.</h4>
-                            <a href="#" class="news-link">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-    <br>
+    <br><br>
+
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center gap-3">
+          <div class="news-card">
+            <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
+            <div class="news-img-container">
+              <img src="images/img1 N.png" class="news-img" alt="News Image 1">
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-title-h">How to pick the perfect watch</h3>
+              <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material,
+                and functionality.</h4>
+              <a href="#" class="news-link">Read More</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
+            <div class="news-img-container">
+              <img src="images/img2 N.png" class="news-img" alt="News Image 2">
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-title-h">How to pick the perfect watch</h3>
+              <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material,
+                and functionality.</h4>
+              <a href="#" class="news-link">Read More</a>
+            </div>
+          </div>
+
+          <div class="news-card">
+            <h2 class="news-date-h"><b>Posted: 30 Oct 2019</b></h2>
+            <div class="news-img-container">
+              <img src="images/img3 N.png" class="news-img" alt="News Image 3">
+            </div>
+            <div class="news-card-body">
+              <h3 class="news-title-h">How to pick the perfect watch</h3>
+              <h4 class="news-desc">Pick a watch that matches your style, needs, and comfort. Consider design, material,
+                and functionality.</h4>
+              <a href="#" class="news-link">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
   <br>
-  
+  <br>
+
   <section class="promo-section">
     <div class="promo-content">
       <div class="promo-text">
-        
+
         <h2>Don't Miss The Moment</h2>
         <p>Timeless watches for life's unforgettable seconds. Make every second count with elegance and precision.</p>
         <button class="promo-btn">Buy Now</button>
       </div>
     </div>
   </section>
-  
-
 
   <!-- Testimonials Section -->
-<section class="testimonials-section text-center">
-  <h2>Testimonials</h2>
-  <div class="news-divider-h"></div>  
-  <div class="outerdiv">
-    <div class="innerdiv">
-      <!-- div1 -->
-      <div class="div1 eachdiv">
-        <div class="userdetails">
-          <div class="imgbox">
-            <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg" alt="">
-          </div>
-          <div class="detbox">
-            <p class="name">Anushani Dayaratne</p>
-            
-          </div>
-        </div>
-        <div class="review">
-         
-        <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features could use a bit more refinement. Overall, a solid buy. ”</p>
-        </div>
-      </div>
-      <!-- div2 -->
-      <div class="div2 eachdiv">
-        <div class="userdetails">
-          <div class="imgbox">
-            <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg" alt="">
-          </div>
-          <div class="detbox">
-            <p class="name">Anushani Dayaratne</p>
-           
-          </div>
-        </div>
-        <div class="review">
+  <section class="testimonials-section text-center">
+    <h2>Testimonials</h2>
+    <div class="news-divider-h"></div>
+    <div class="outerdiv">
+      <div class="innerdiv">
+        <!-- div1 -->
+        <div class="div1 eachdiv">
+          <div class="userdetails">
+            <div class="imgbox">
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-daniel.jpg"
+                alt="">
+            </div>
+            <div class="detbox">
+              <p class="name">Peter Pan</p>
 
-        <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features could use a bit more refinement. Overall, a solid buy. ”</p>
-        </div>
-      </div>
-      <!-- div3 -->
-      <div class="div3 eachdiv">
-        <div class="userdetails">
-          <div class="imgbox">
-            <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg" alt="">
+            </div>
           </div>
-          <div class="detbox">
-            <p class="name dark">Anushani Dayaratne</p>
-           
-          </div>
-        </div>
-        <div class="review dark">
-          
-          <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features could use a bit more refinement. Overall, a solid buy. ”</p>
-        </div>
-      </div>
-      <!-- div4 -->
-      <div class="div4 eachdiv">
-        <div class="userdetails">
-          <div class="imgbox">
-            <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg" alt="">
-          </div>
-          <div class="detbox">
-            <p class="name dark">Anushani Dayaratne</p>
-           
-          </div>
-        </div>
-        <div class="review dark">
+          <div class="review">
 
-        <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features could use a bit more refinement. Overall, a solid buy. ”</p>
-        </div>
-      </div>
-      <!-- div5 -->
-      <div class="div5 eachdiv">
-        <div class="userdetails">
-          <div class="imgbox">
-            <img src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg" alt="">
-          </div>
-          <div class="detbox">
-            <p class="name">Anushani Dayaratne</p>
-          
+            <p>“ The photos only partially capture its charm. On the wrist it looks simply insane. The beautiful convex glass lid catches the light from every angle - it's hard not to stare at it. Up close the dial has such a subtle glow, flare effect - magic. The leather strap is a bit stiff at first, as it usually is, but after a few wearings it gets soft and mega comfortable. Seriously, this is one of the better made leather straps I've had in my hands. As for functionality - I've had it for a month and a half now and it goes perfectly. Zero lag. It also has a second time zone, which always comes in handy - whether on vacation or on a business trip. The crown? They work with such a pleasant, solid resistance - you immediately feel that this is not just any mechanism, but something with class.”</p>
           </div>
         </div>
-        <div class="review">
+        <!-- div2 -->
+        <div class="div2 eachdiv">
+          <div class="userdetails">
+            <div class="imgbox">
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jonathan.jpg"
+                alt="">
+            </div>
+            <div class="detbox">
+              <p class="name">Jessica Rooby</p>
 
-        <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features could use a bit more refinement. Overall, a solid buy. ”</p>
+            </div>
+          </div>
+          <div class="review">
+
+            <p>“ Good Watch, Could Be Better. I love how lightweight and comfortable the watch is. The design is
+              beautiful, and it pairs well with both casual and formal outfits. However, I feel the smartwatch features
+              could use a bit more refinement. Overall, a solid buy. ”</p>
+          </div>
+        </div>
+        <!-- div3 -->
+        <div class="div3 eachdiv">
+          <div class="userdetails">
+            <div class="imgbox">
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-kira.jpg"
+                alt="">
+            </div>
+            <div class="detbox">
+              <p class="name dark">Shawn Mendes</p>
+
+            </div>
+          </div>
+          <div class="review dark">
+
+            <p>“  am really satisfied with the purchase of this model. The watch has a classic yet modern design that perfectly combines elegance with functionality. It is characterized by exceptional craftsmanship – the steel case, precise movement, and clear dial make it a watch that not only looks great but also works flawlessly.The Day-Date feature is a huge plus – the ability to quickly check the day of the week and the date is very convenient, and the watch still looks neat and elegant. The dial is very readable, and the hands are easy to read, which is important for me in everyday use.The watch is solid but not too heavy, making it comfortable to wear daily.”</p>
+          </div>
+        </div>
+        <!-- div4 -->
+        <div class="div4 eachdiv">
+          <div class="userdetails">
+            <div class="imgbox">
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-jeanette.jpg"
+                alt="">
+            </div>
+            <div class="detbox">
+              <p class="name dark">Jessie Carter </p>
+
+            </div>
+          </div>
+          <div class="review dark">
+
+            <p>“Bought in 2025. Visually beautiful, mechanism sounds wonderful and supposedly ultra-reliable, quality super, comfortable strap - does not slip on the wrist. Moon phase - an interesting accessory for NASA lovers :) I recommend.”</p>
+          </div>
+        </div>
+        <!-- div5 -->
+        <div class="div5 eachdiv">
+          <div class="userdetails">
+            <div class="imgbox">
+              <img
+                src="https://raw.githubusercontent.com/RahulSahOfficial/testimonials_grid_section/5532c958b7d3c9b910a216b198fdd21c73112d84/images/image-patrick.jpg"
+                alt="">
+            </div>
+            <div class="detbox">
+              <p class="name">John Doe</p>
+
+            </div>
+          </div>
+          <div class="review">
+
+            <p>“ The dial features a beautiful guilloché pattern that gives it a subtle shine and makes the watch stand out from others. Additionally, the crystals used as indices are a unique touch, adding a sense of class and femininity. It looks really stunning and makes the watch not just functional, but full of charm. I also can't overlook the sapphire glass, which is exceptionally resistant to scratches, keeping the watch in perfect condition for a long time. That’s a huge plus, as I know I can enjoy it without worrying about its appearance. The watch is light, comfortable to wear, and its classic design makes it suitable for any outfit – both for everyday wear and special occasions. I’m extremely happy with this purchase and can wholeheartedly recommend it to any woman looking for an elegant yet functional watch. ”</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
- 
-</section>
+
+  </section>
 
 
-
-
-
-
-
-
-    <!-- Footer Section -->
-    <footer class="footer mt-5">
-        <div class="container">
-            <div class="row">
-                <!-- Column 1 -->
-                <div class="col-lg-4 column-gap">
-                    <img src="images/logo-white.svg" alt="Logo" class="footer-logo" width="300px" style="margin-left: -20px;">
-                    <hr>
-                    <p class="footer-text">Absolutely love this watch! The design is elegant, and the quality is amazing. It’s comfortable to wear and looks great for any occasion. Fast shipping and well-packaged. Highly recommend!</p>
-                    <div class="social-icons">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-
-                <!-- Column 2 -->
-                <div class="col-lg-2 text column-gap">
-                    <h5>Quick Menu</h5>
-                    <hr>
-                    <ul class="footer-menu">
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="collection.html">Shop</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="wishlist.html">Wishlist</a></li>
-                        <li><a href="mycart.html">Cart</a></li>
-                    </ul>
-                </div>
-
-                <!-- Column 3 -->
-                <div class="col-lg-4">
-                    <h5>Contact Us</h5>
-                    <hr>
-                    <p><i class="fas fa-map-marker-alt"></i> 367, lotus street, galle</p>
-                    <p><i class="fas fa-phone"></i> 0773234685</p>
-                    <p><i class="fas fa-envelope"></i> sampleemailaddress.com</p>
-
-                    <h5>Payment Methods</h5>
-                    <hr>
-                    <div class="payment-icons">
-                        <img src="images/koko.png" alt="koko">
-                        <img src="images/visa.png" alt="Visa">
-                        <img src="images/Mastercard.png" alt="Mastercard">
-                        <img src="images/American Express.png" alt="Amex">
-                    </div>
+   <!-- Footer Section -->
+   <footer class="footer mt-5">
+    <div class="container">
+        <div class="row">
+            <!-- Column 1 -->
+            <div class="col-lg-4 column-gap">
+                <img src="images/logo-white.svg" alt="Logo" class="footer-logo" width="300px"
+                    style="margin-left: -10px;">
+                <hr>
+                <p class="footer-text">Absolutely love this watch! The design is elegant, and the quality is
+                    amazing. It’s comfortable to wear and looks great for any occasion. Fast shipping and
+                    well-packaged. Highly recommend!</p>
+                <div class="social-icons">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-youtube"></i></a>
+                    <a href="#"><i class="bi bi-twitter"></i></a>
                 </div>
             </div>
 
-            <!-- Footer Bottom -->
-            <hr>
-            <div class="footer-bottom d-flex justify-content-center align-items-center text-center">
-                <p style="padding-right: 100px;">All Copyrights Reserved © HOURMARKERS</p>
-                <p>
-                    <a href="privacy.html">Privacy Policy</a> 
-                    <a href="terms.html">Terms of Use</a>
-                </p>
+            <!-- Column 2 -->
+            <div class="col-lg-2 text column-gap">
+                <h4 class="menu-title">Quick Menu</h4>
+                <hr>
+                <ul class="footer-menu">
+                    <li><a href="news.html">News</a></li>
+                    <li><a href="collection.html">Shop</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="wishlist.html">Wishlist</a></li>
+                    <li><a href="mycart.html">Cart</a></li>
+                </ul>
             </div>
-            
+
+            <!-- Column 3 -->
+            <div class="col-lg-4">
+                <h4 class="menu-title">Contact Us</h4>
+                <hr>
+                <p class="footer-contact-us"><i class="bi bi-geo-alt-fill"></i> 367, lotus street, galle</p>
+                <p class="footer-contact-us"><i class="bi bi-telephone-fill"></i> 0773234685</p>
+                <p class="footer-contact-us"><i class="bi bi-envelope-fill"></i> sampleemailaddress.com</p>
+
+                <h4 class="menu-title" style=" margin-top: 30px;">Payment Methods</h4>
+                <hr>
+                <div class="payment-icons">
+                    <img src="images/koko.png" alt="koko">
+                    <img src="images/visa.png" alt="Visa">
+                    <img src="images/Mastercard.png" alt="Mastercard">
+                    <img src="images/American Express.png" alt="Amex">
+                </div>
+            </div>
         </div>
-    </footer>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-   
+        <!-- Footer Bottom -->
+        <hr>
+        <div class="footer-bottom d-flex justify-content-center align-items-center text-center">
+            <p class="footer-contact-us" style="padding-right: 100px;">All Copyrights Reserved ©WatchVerse <script>document.write(new Date().getFullYear())</script> </p>
+            <p>
+                <a href="#" style="font-weight: 100;">Privacy Policy</a>
+                <a href="#" style="font-weight: 100;">Terms of Use</a>
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+  <!-- JavaScript for Tab Switching -->
+  <script>
+    function changeTab(tabElement, targetId) {
+      // Remove 'active' class from all tabs
+      document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+      // Add 'active' to clicked tab
+      tabElement.classList.add('active');
+
+      // Hide all product lists
+      document.querySelectorAll('.product-list').forEach(list => list.classList.add('d-none'));
+      // Show selected category
+      document.getElementById(targetId).classList.remove('d-none');
+    }
+  </script>
+
 </body>
+
 </html>

@@ -2134,8 +2134,6 @@ header a:hover i {
   .outerdiv
   {
       width: 100%;
-      min-height: 100vh;
-      background: #EDF2F8;
       display: flex;
       align-items: center;
       justify-content: center;
