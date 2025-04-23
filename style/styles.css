@@ -1852,6 +1852,18 @@ header a:hover i {
           background: #fc8c1c;
       }
 
+      .product-link {
+        text-decoration: none !important; /* Remove underline */
+        color: inherit !important;        /* Inherit color from parent */
+        display: block !important;        /* Ensures clickable block area */
+      }
+      
+      .product-link:hover {
+        text-decoration: none;
+        color: inherit;
+      }
+
+
       /* Responsive */
       @media (max-width: 768px) {
           .carousel-container-s {
